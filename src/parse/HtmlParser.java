@@ -31,9 +31,9 @@ public class HtmlParser {
         movie.setDuration(regex("<span property=\"v:runtime\" content=\"([\\d]*?)\"",html).get("group1"));
         movie.setCountry(regex("制片国家/地区:</span>(.*?)<br/>",html).get("group1"));
         movie.setLanguage(regex("语言:</span>(.*?)<br/>",html).get("group1"));
-        movie.setDescription(regex("property=\"v:summary\" class=\"\">[\\s]*(.*?)[\\s]*?</span>",html).get("group1"));
+        //movie.setDescription(regex("property=\"v:summary\" class=\"\">[\\s]*(.*?)[\\s]*?</span>",html).get("group1"));
 
-        System.out.println(movie);
+        System.out.println(movie.toString());
 
         Rate rate= parseRate(html,movieId);
         System.out.println("\n"+rate);
